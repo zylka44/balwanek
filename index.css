@@ -1,0 +1,91 @@
+body {
+	color: #bcbcbc;
+	font-size: 28px;
+	font-family: 'Inconsolata', monospace;
+}
+
+a {
+	text-decoration: none;
+	color: #bcbcbc;
+}
+
+#nawigacja {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	font-size: 20px;
+	text-align: right;
+}
+
+#pojemnik {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#plansza {
+	width: 1000px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 40px;
+	min-height: 60px;
+}
+
+#balwanek {
+	float: left;
+	width: 500px;
+	text-align: center;
+	min-height: 330px;
+}
+
+#alfabet {
+	float: left;
+	width: 500px;
+	text-align: center;
+}
+
+.litera {
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	padding: 5px;
+	margin: 5px;
+	border: 2px solid #bcbcbc;
+	float: left;
+	cursor: pointer;
+	border-radius: 25px;
+}
+
+.litera:hover {
+	color: #dedede;
+	border: 2px solid #dedede;
+}
+
+.reset {
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.reset:hover {
+	color: #dedede;
+}
+
+#menu {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+.inne {
+	cursor: pointer;
+}
+
+.inne:hover {
+	color: #dedede;
+}
+
+.button {
+	color: green;
+}
