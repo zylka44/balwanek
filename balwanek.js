@@ -5,10 +5,9 @@ sentences[2] = "Późna zima długo trzyma";
 sentences[3] = "Jedna jaskółka wiosny nie czyni";
 sentences[4] = "Kwiecień plecień co przeplata trochę zimy trochę lata";
 
-function rand()
-{
-var rand_number = Math.floor(Math.random() * sentences.length);
-rand_sentence = sentences[rand_number];
+function rand() {
+	var rand_number = Math.floor(Math.random() * sentences.length);
+	rand_sentence = sentences[rand_number];
 }
 
 rand();
@@ -24,14 +23,12 @@ var no = new Audio("no.wav");
 
 var sentence1 = "";
 
-for (i=0; i<s_length; i++)
-{
-	if (sentence.charAt(i)===" ") sentence1 = sentence1 + " ";
+for (i = 0; i < s_length; i++) {
+	if (sentence.charAt(i) === " ") sentence1 = sentence1 + " ";
 	else sentence1 = sentence1 + "-";
 }
 
-function write_sentence()
-{
+function write_sentence() {
 	document.getElementById("plansza").innerHTML = sentence1;
 }
 
@@ -75,15 +72,13 @@ letters[32] = "Z";
 letters[33] = "Ź";
 letters[34] = "Ż";
 
-function start()
-{
-	var div_letter ="";
+function start() {
+	var div_letter = "";
 
-	for (i=0;i<=34;i++)
-	{
+	for (i = 0; i <= 34; i++) {
 		var element = "lit" + i;
-		div_letter = div_letter + '<div class="litera" onclick="check('+i+')" id="'+element+'">'+ letters[i] +'</div>';
-		if ((i+1)%7===0) div_letter = div_letter + '<div style="clear:both;"></div>';
+		div_letter = div_letter + '<div class="litera" onclick="check(' + i + ')" id="' + element + '">' + letters[i] + '</div>';
+		if ((i + 1) % 7 === 0) div_letter = div_letter + '<div style="clear:both;"></div>';
 	}
 
 	document.getElementById("alfabet").innerHTML = div_letter;
@@ -91,27 +86,22 @@ function start()
 	write_sentence();
 }
 
-String.prototype.setLetter = function(position,letter)
-{
-	if (position>this.lenght-1) return this.toString();
-	else return this.substr(0,position) + letter + this.substr(position+1);
+String.prototype.setLetter = function (position, letter) {
+	if (position > this.lenght - 1) return this.toString();
+	else return this.substr(0, position) + letter + this.substr(position + 1);
 }
 
-function check(number)
-{
+function check(number) {
 	var good_letter = false;
 
-	for (i=0;i<s_length;i++)
-	{
-		if (sentence.charAt(i)===letters[number])
-		{
-			sentence1 = sentence1.setLetter(i,letters[number]);
+	for (i = 0; i < s_length; i++) {
+		if (sentence.charAt(i) === letters[number]) {
+			sentence1 = sentence1.setLetter(i, letters[number]);
 			good_letter = true;
 		}
 	}
 
-	if(good_letter===true)
-	{
+	if (good_letter === true) {
 		yes.play();
 		var element = "lit" + number;
 		document.getElementById(element).style.color = "#eeeeee";
@@ -120,34 +110,31 @@ function check(number)
 
 		write_sentence();
 	}
-	else
-	{
+	else {
 		var element = "lit" + number;
 		document.getElementById(element).style.color = "#eeeeee";
 		document.getElementById(element).style.border = "2px solid #eeeeee";
 		document.getElementById(element).style.cursor = "default";
-		document.getElementById(element).setAttribute("onclick",";");
+		document.getElementById(element).setAttribute("onclick", ";");
 
 		//skucha
 		how_many_mistakes++;
-		var obraz = "img/b"+how_many_mistakes+".png";
-		document.getElementById("balwanek").innerHTML = '<img src="'+obraz+'"/>';
+		var obraz = "img/b" + how_many_mistakes + ".png";
+		document.getElementById("balwanek").innerHTML = '<img src="' + obraz + '"/>';
 	}
 
 	//wygrana
-	if(sentence===sentence1)
-	{
-		document.getElementById("alfabet").innerHTML = "Tak jest! Podano prawidłowe hasło:<br>" +sentence+'<br><br><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>'
+	if (sentence === sentence1) {
+		document.getElementById("alfabet").innerHTML = "Tak jest! Podano prawidłowe hasło:<br>" + sentence + '<br><br><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>'
 		document.getElementById("balwanek").innerHTML = '<img src="img/bw.png"/>';
 	}
 
 	//przegrana
-	if(how_many_mistakes>=10)
-		document.getElementById("alfabet").innerHTML = "Przegrana! Zostałeś bałwankiem. Prawidłowe hasło:<br>" +sentence+'<br><br><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>'
+	if (how_many_mistakes >= 10)
+		document.getElementById("alfabet").innerHTML = "Przegrana! Zostałeś bałwankiem. Prawidłowe hasło:<br>" + sentence + '<br><br><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>'
 
 }
 
-function odkryj()
-{
-	document.getElementById("alfabet").innerHTML = "Prawidłowe hasło:<br>" +sentence+'<br><br><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>'
+function odkryj() {
+	document.getElementById("alfabet").innerHTML = "Prawidłowe hasło:<br>" + sentence + '<br><br><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>'
 }

@@ -24,7 +24,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 	<link rel="icon" href="favicon.ico" />
 
-	<script src="balwanek.js"></script>
+	
 </head>
 <body>
 

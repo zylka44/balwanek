@@ -12,7 +12,10 @@
 
 <!DOCTYPE html>
 <html lang="pl">
+	
+
 <head>
+
 	<meta charset="utf-8"/>
   	<title>Bałwanek</title>
 	<meta name="decryption" content="Gra w bałwanka."/>
@@ -25,6 +28,8 @@
 	<link rel="icon" href="favicon.ico" />
 
 	<script src="balwanek.js"></script>
+
+		
 </head>
 <body>
 
@@ -32,7 +37,7 @@
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
+		<div   class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 			<li class="nav-item">
 				<a class="nav-link" href="logout.php"><small>Wyloguj się</small></a>
